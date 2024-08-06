@@ -24,3 +24,6 @@ def get_api_data(place = ''):
         print(f"Error occurred: {error}")
     else:
         return response.json()
+
+data = get_api_data('Jatibonico')
+print(data)

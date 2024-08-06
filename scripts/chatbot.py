@@ -1,13 +1,13 @@
 import os
 from dotenv import load_dotenv
-from langchain.llms import OpenAI
-from langchain.chat_models import ChatOpenAI
+from langchain.llms import openai
+from langchain_openai import ChatOpenAI
 from langchain.schema import (AIMessage, HumanMessage)
 from dataset_api import get_api_data
 
-dotenv.load_dotenv()
-OpenAI.apikey = os.getenv('OPENAI_API_KEY')
-api_key = OpenAI.apikey
+load_dotenv()
+openai.apikey = os.getenv('OPENAI_API_KEY')
+api_key = openai.apikey
 
 def asking_chatbot(message : str):
     place = message.split('in')[-1].split()
